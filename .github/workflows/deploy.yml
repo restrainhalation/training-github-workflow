@@ -1,0 +1,26 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main  # メインブランチが更新されたときにワークフローを実行
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository  # リポジトリをチェックアウト
+        uses: actions/checkout@v2
+
+      - name: Install dependencies and build  # 依存関係のインストールとビルド
+        run: |
+          yarn install
+          yarn build
+
+      - name: Deploy to GitHub Pages  # GitHub Pagesにデプロイ
+        uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BRANCH: gh-pages  # 公開するブランチ
+          FOLDER: out  # ビルドされたファイルの場所
