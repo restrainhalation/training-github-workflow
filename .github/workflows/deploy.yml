@@ -5,6 +5,11 @@ on:
     branches:
       - main  # メインブランチが更新されたときにワークフローを実行
 
+permissions:
+  actions: write
+  checks: write
+  contents: write
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
