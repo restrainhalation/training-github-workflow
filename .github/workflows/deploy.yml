@@ -21,8 +21,8 @@ jobs:
 
       - name: Install dependencies and build  # 依存関係のインストールとビルド
         run: |
-          pnpm install
-          pnpm build
+          npm install
+          npm run build
 
       - name: Deploy to GitHub Pages  # GitHub Pagesにデプロイ
         uses: JamesIves/github-pages-deploy-action@3.7.1
