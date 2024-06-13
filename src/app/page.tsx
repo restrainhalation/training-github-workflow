@@ -3,8 +3,6 @@ import nextConfig from '../../next.config.mjs'
 const BASE_PATH = nextConfig.basePath ? nextConfig.basePath : ''
 
 export default function Home() {
-  // 環境差を埋めるためのパスのプレフィックス
-
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
