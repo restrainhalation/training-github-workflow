@@ -1,8 +1,7 @@
 import bundleAnalyzer from '@next/bundle-analyzer';
-import { name } from './package.json'
 
 // 環境差を埋めるためのパスのプレフィックス
-const prefix = process.env.NODE_ENV === 'production' ? `/${name}` : ''
+const prefix = process.env.NODE_ENV === 'production' ? '/mantine-next-template' : ''
 
 const withBundleAnalyzer = bundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
