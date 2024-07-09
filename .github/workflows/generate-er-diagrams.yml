@@ -1,5 +1,11 @@
 name: Generate ER Diagrams
-on: [push, pull_request]
+on:
+  push:
+    paths:
+      - 'diagram.mermaid'
+  pull_request:
+    paths:
+      - 'diagram.mermaid'
 jobs:
   build:
     runs-on: ubuntu-latest
